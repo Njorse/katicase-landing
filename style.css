@@ -1159,6 +1159,10 @@ img {
     .advantages-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    .floating-tooltip { right: 0; top: 10%; }
+    .ui-colors { left: 0; top: 0; z-index: 20; }
+    .hero-mini-gallery { position: relative; bottom: 0; margin-top: 30px; text-align: center; }
+    .gallery-track { justify-content: center; }
 }
 
 /* TABLETS Y MÓVILES (HASTA 768PX) */
@@ -1360,6 +1364,7 @@ img {
     .sale-grid {
         grid-template-columns: 1fr;
     }
+    .sale-card { flex-wrap: wrap; }
     .carousel-scene {
         height: 400px;
     }
@@ -1447,20 +1452,7 @@ img {
     height: 100%;
 }
 
-.phone-showcase {
-    width: 280px;
-    position: relative;
-    z-index: 5;
-    border-radius: 40px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 30px rgba(0, 243, 255, 0.3);
-    border: 1px solid rgba(255,255,255,0.1);
-}
 
-.phone-showcase img {
-    width: 100%;
-    border-radius: 40px;
-    transition: 0.4s ease;
-}
 
 /* Paneles Flotantes (Glassmorphism) */
 .floating-ui {
@@ -1472,12 +1464,6 @@ img {
     padding: 15px;
     z-index: 10;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-.ui-colors {
-    top: 10%;
-    left: -15%;
-    width: 200px;
 }
 
 .color-dots {
@@ -1501,56 +1487,7 @@ img {
     border: 1px solid rgba(255,255,255,0.2);
 }
 
-.floating-tooltip {
-    position: absolute;
-    top: 45%;
-    right: -40%;
-    background: var(--dark);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 20px;
-    border: 1px solid var(--primary);
-    box-shadow: var(--neon-pink-glow);
-    font-weight: bold;
-    font-size: 0.9rem;
-    z-index: 10;
-}
 
-/* Mini Galería Inferior */
-.hero-mini-gallery {
-    position: absolute;
-    bottom: -10%;
-    right: 0;
-    width: 100%;
-    z-index: 15;
-}
-
-.hero-mini-gallery h4 {
-    margin-bottom: 10px;
-    font-size: 1.1rem;
-}
-
-.gallery-track {
-    display: flex;
-    gap: 15px;
-}
-
-.gallery-thumb {
-    width: 70px;
-    height: 100px;
-    object-fit: cover;  
-    border-radius: 12px;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: 0.3s ease;
-    opacity: 0.6;
-}
-.gallery-thumb:hover, .gallery-thumb.active {
-    border-color: var(--secondary);
-    opacity: 1;
-    transform: translateY(-5px);
-    box-shadow: var(--neon-cyan-glow);
-}
 
 /* Animaciones Flotantes */
 .floating-anim-1 { animation: float 4s ease-in-out infinite; }
@@ -1566,14 +1503,6 @@ img {
     0% { transform: scale(1); box-shadow: 0 0 15px rgba(241, 54, 169, 0.4); }
     50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(241, 54, 169, 0.8); }
     100% { transform: scale(1); box-shadow: 0 0 15px rgba(241, 54, 169, 0.4); }
-}
-
-/* Responsivo para móviles */
-@media screen and (max-width: 1024px) {
-    .floating-tooltip { right: 0; top: 10%; }
-    .ui-colors { left: 0; top: 0; z-index: 20; }
-    .hero-mini-gallery { position: relative; bottom: 0; margin-top: 30px; text-align: center; }
-    .gallery-track { justify-content: center; }
 }
 
 
@@ -1622,7 +1551,7 @@ img {
    ======================================================= */
 .phone-showcase {
     width: 280px;
-    height: 560px; /* Le damos altura fija */
+    height: auto;
     position: relative;
     z-index: 5;
     border-radius: 40px;
