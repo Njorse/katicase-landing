@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kati Case | Viste tu celular con Alta Costura</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="container navbar-container">
+            <a href="#" class="logo">
+                <span class="logo-black">KATI</span><span class="logo-pink">CASE</span>
+            </a>
+            <div class="nav-links" id="nav-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#productos">Colección</a>
+                <a href="#testimonios">Opiniones</a>
+                <a href="https://wa.me/tu-numero" class="btn-primary-sm">Pedir Ahora</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section class="hero" id="inicio" style="position: relative; overflow: hidden;">
+        
+        <video class="hero-bg-video" autoplay muted loop playsinline style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index: 0;">
+            <source src="VIDEOS/Diseño sin título.mp4" type="video/mp4">
+        </video>
+        
+        <div class="hero-overlay" style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); z-index: 1;"></div>
+        <div class="hero-glow background-glow-1" style="z-index: 2;"></div>
+        <div class="hero-glow background-glow-2" style="z-index: 2;"></div>
+        
+        <div class="container hero-container" style="position: relative; z-index: 3;">
+            <div class="hero-text">
+                <div class="badge neon-badge">
+                    <i class="fas fa-check-circle"></i> EDICIÓN LIMITADA: TU ESTILO, TU REGLA
+                </div>
+                <h1>Tu celular,<br><span class="highlight-gradient">tu lienzo.</span></h1>
+                <p>Arte premium para tu bolsillo. Protección blindada 360° con acabados de alta costura que redefinen tu personalidad.</p>
+                <div class="hero-btns">
+                    <a href="#catalogo" class="btn-primary pulse-btn">DISEÑAR CARCASA EXCLUSIVA</a>
+                    <a href="#nosotros" class="btn-secondary">Saber Más ➔</a>
+                </div>
+            </div>
+
+            <div class="hero-interactive">
+                <div class="floating-ui ui-colors floating-anim-1">
+                    <div class="ui-header">
+                        <span class="ui-icon">🎨</span> <span>Personaliza</span>
+                    </div>
+                    <div class="color-dots">
+                        <span class="dot" style="background: #ff3366;"></span>
+                        <span class="dot" style="background: #00f3ff;"></span>
+                        <span class="dot" style="background: #b026ff;"></span>
+                        <span class="dot" style="background: #ffd700;"></span>
+                    </div>
+                    <div class="ui-input-mockup">KatiCase</div>
+                </div>
+
+                <div class="phone-showcase">
+                    <img src="img/nuevo x6.png2.png" alt="Carcasa KatiCase" id="main-hero-img">
+                    
+                    <div class="floating-tooltip floating-anim-2">
+                        <i class="fas fa-mouse-pointer"></i> Tu Nombre Aquí...
+                    </div>
+                </div>
+
+                <div class="hero-mini-gallery">
+                    <h4>🔥 Top Designs</h4>
+                    <div class="gallery-track">
+                        <img src="img/niño machu.png" class="gallery-thumb active" onclick="changeHeroImage(this)">
+                        <img src="img/nuevo x6.png2.png" class="gallery-thumb" onclick="changeHeroImage(this)">
+                        <img src="img/25.png" class="gallery-thumb" onclick="changeHeroImage(this)">
+                        <img src="img/24.png" class="gallery-thumb" onclick="changeHeroImage(this)">
+                        <img src="img/0.111.png" class="gallery-thumb" onclick="changeHeroImage(this)">
+                        <img src="img/NUEVA.png" class="gallery-thumb" onclick="changeHeroImage(this)">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <span>⚡ ENVÍO GRATIS A TODO EL PERÚ ⚡ PROTECCIÓN 360° ⚡ MATERIALES PREMIUM ⚡ EDICIÓN LIMITADA ⚡ DISEÑOS EXCLUSIVOS </span>
+            <span>⚡ ENVÍO GRATIS A TODO EL PERÚ ⚡ PROTECCIÓN 360° ⚡ MATERIALES PREMIUM ⚡ EDICIÓN LIMITADA ⚡ DISEÑOS EXCLUSIVOS </span>
+        </div>
+    </div>
+
+    <section class="advantages" id="ventajas">
+        <div class="container">
+            <div class="advantages-grid">
+                <div class="advantage-item">
+                    <i class="fas fa-shield-virus"></i>
+                    <h3>Impact-Proof</h3>
+                    <p>Protección certificada contra caídas.</p>
+                </div>
+                <div class="advantage-item">
+                    <i class="fas fa-gem"></i>
+                    <h3>Diseño Exclusivo</h3>
+                    <p>Colecciones limitadas y elegantes.</p>
+                </div>
+                <div class="advantage-item">
+                    <i class="fas fa-magic"></i>
+                    <h3>Ajuste Perfecto</h3>
+                    <p>Acceso total a botones y puertos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="productos" class="products" style="position: relative; overflow: hidden; padding: 80px 0;">
+        
+        <video autoplay muted loop playsinline style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-1; opacity:0.3;">
+            <source src="VIDEOS/VIDEO2.mp4" type="video/mp4">
+        </video>
+
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="section-header">
+                <h2>Nuestros Best Sellers</h2>
+                <p>Gira el carrusel para descubrir lo más exclusivo de Kati Case</p>
+            </div>
+            
+            <div class="carousel-scene">
+                <div class="carousel-3d" id="carousel3d">
+                    <div class="carousel-item">
+                        <span class="price-tag">S/ 45</span>
+                        <div class="product-img-container v1"><img src="img/2.jpg" alt="Case Aura Pink"></div>
+                        <h3>Aura Pink Matte</h3>
+                        <p class="product-desc">Textura suave, antideslizante.</p>
+                        <button class="btn-buy">Añadir al Carrito</button>
+                    </div>
+                    <div class="carousel-item">
+                        <span class="price-tag">S/ 50</span>
+                        <div class="product-img-container v2"><img src="img/3.jpg" alt="Case Midnight"></div>
+                        <h3>Midnight Leather</h3>
+                        <p class="product-desc">Cuero vegano, tacto premium.</p>
+                        <button class="btn-buy">Añadir al Carrito</button>
+                    </div>
+                    <div class="carousel-item">
+                        <span class="price-tag">S/ 48</span>
+                        <div class="product-img-container v3"><img src="img/4.jpg" alt="Case Sky Blue"></div>
+                        <h3>Sky Blue Glass</h3>
+                        <p class="product-desc">Acabado cristal templado.</p>
+                        <button class="btn-buy">Añadir al Carrito</button>
+                    </div>
+                    <div class="carousel-item">
+                        <span class="price-tag">S/ 55</span>
+                        <div class="product-img-container v1"><img src="img/2.jpg" alt="Case Especial"></div>
+                        <h3>Edición Limitada</h3>
+                        <p class="product-desc">Brillo neón exclusivo.</p>
+                        <button class="btn-buy">Añadir al Carrito</button>
+                    </div>
+                    <div class="carousel-item">
+                        <span class="price-tag">S/ 60</span>
+                        <div class="product-img-container v2"><img src="img/3.jpg" alt="Case Premium"></div>
+                        <h3>Onyx Dark</h3>
+                        <p class="product-desc">Protección grado militar.</p>
+                        <button class="btn-buy">Añadir al Carrito</button>
+                    </div>
+                    <div class="carousel-item">
+                        <span class="price-tag">S/ 42</span>
+                        <div class="product-img-container v3"><img src="img/4.jpg" alt="Case Clear"></div>
+                        <h3>Crystal Clear</h3>
+                        <p class="product-desc">Transparencia absoluta.</p>
+                        <button class="btn-buy">Añadir al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-controls" style="display: flex; justify-content: center; gap: 20px; margin-top: 40px;">
+                <button id="prevBtn" class="btn-secondary"><i class="fas fa-arrow-left"></i> Anterior</button>
+                <button id="nextBtn" class="btn-primary-sm">Siguiente <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="flash-sale">
+        <div class="container">
+            <div class="sale-header">
+                <div class="badge">Venta de Locura</div>
+                <h2>OFERTAS <span class="highlight">MODO PRO</span></h2>
+                <div class="countdown-container">
+                    <div class="time-block"><span id="hours">05</span><small>HORAS</small></div>
+                    <div class="time-separator">:</div>
+                    <div class="time-block"><span id="minutes">24</span><small>MINS</small></div>
+                    <div class="time-separator">:</div>
+                    <div class="time-block"><span id="seconds">59</span><small>SEGS</small></div>
+                </div>
+            </div>
+
+            <div class="sale-grid" id="grid-productos"></div>
+        </div>
+    </section>
+
+    <div class="stock-container">
+        <div class="stock-bar"><div class="stock-fill" style="width: 85%;"></div></div>
+        <small>🔥 Solo quedan 4 unidades</small>
+    </div>
+
+    <section id="testimonios" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Lo que dicen nuestras clientas</h2>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-item">
+                    <div class="stars">★★★★★</div>
+                    <p>"Me encanta! Es precioso y realmente protege. Mi iPhone se cayó y no le pasó nada."</p>
+                    <span class="client-name">- Mariana P., Lima</span>
+                </div>
+                <div class="testimonial-item">
+                    <div class="stars">★★★★★</div>
+                    <p>"Excelente calidad y atención. El diseño Aura Pink es aún más bonito en persona."</p>
+                    <span class="client-name">- Andrea S., Cusco</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="video-wall-section" style="position: relative; overflow: hidden; padding: 80px 0;">
+        
+        <video autoplay muted loop playsinline style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-1; opacity:0.3;">
+            <source src="VIDEOS/VIDEO2.mp4" type="video/mp4">
+        </video>
+
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="section-header">
+                <div class="badge">Live View</div>
+                <h2>NUESTRA <span class="highlight">CALIDAD EN VIVO</span></h2>
+                <p>Videos reales de nuestras clientas y procesos.</p>
+            </div>
+            
+            <div class="video-grid-pro" id="video-wall">
+                </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-logo">KATI<span class="logo-pink">CASE</span></div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="https://wa.me/tu-numero"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p class="copyright">&copy; 2026 Kati Case. Protección con Estilo.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/tu-numero" class="wsp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <a href="#" class="chat-float" onclick="toggleChatModal()">
+        <i class="fas fa-comments"></i>
+    </a>
+
+    <!-- Modal del Chat de Voz -->
+    <div id="chat-modal" class="chat-modal">
+        <div class="chat-modal-content">
+            <div class="chat-header">
+                <img src="chat voz/img/logo trasnp.png" alt="Kati VIP" style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid #f21d41;">
+                <h3>KATI CASE CHAT VIP</h3>
+                <button onclick="toggleChatModal()" class="close-btn">×</button>
+            </div>
+            <div id="chat-container">
+                <div class="bubble bubble-ai">
+                    <img src="chat voz/kati_confused.gif" style="width: 30px; height: 30px; border-radius: 50%; margin-right: 10px; border: 1px solid #00ffff;">
+                    ¡Hola! 💎 Bienvenid@ a Kati Case Elite. ¿Qué modelo de celular tienes hoy para buscarte la case de lujo perfecta? ✨
+                </div>
+            </div>
+            <div class="input-area">
+                <input type="text" id="user-input" placeholder="¿Qué modelo buscas hoy? ✨" onkeypress="handleKeyPress(event)">
+                <button class="icon-btn" id="mic-btn" onclick="toggleMic()" title="Hablar por micrófono">🎙️</button>
+                <button class="icon-btn" onclick="sendMessage()" title="Enviar">🚀</button>
+            </div>
+        </div>
+    </div>
+        
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

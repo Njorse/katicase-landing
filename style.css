@@ -1,0 +1,2077 @@
+/* ==========================================================================
+   KATICASE OFFICIAL - CSS MASTER 2026 (VERSIÓN EXTENDIDA Y DESCOMPRIMIDA)
+   ========================================================================== */
+
+/* ==========================================================================
+   1. VARIABLES GLOBALES (THEME CORE)
+   ========================================================================== */
+:root {
+    /* Paleta Principal Neón */
+    --primary: #f136a9; 
+    --secondary: #00f3ff; 
+    --tertiary: #b026ff; 
+    
+    /* Paleta Oscura y Fondos */
+    --dark: #05050a; 
+    --dark-alt: #0a0a0f;
+    --dark-card: #111111;
+    
+    /* Textos y Luces */
+    --light: #ffffff;
+    --text-gray: #a0a0b8;
+    --text-muted: #666677;
+    
+    /* Efecto Cristal (Glassmorphism Base) */
+    --glass-bg: rgba(15, 15, 25, 0.5); 
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-border-hover: rgba(255, 255, 255, 0.2);
+    
+    /* Sombras Neón Expandidas */
+    --neon-pink-glow: 0 0 15px rgba(241, 54, 169, 0.4), 0 0 40px rgba(241, 54, 169, 0.2);
+    --neon-pink-intense: 0 0 20px rgba(241, 54, 169, 0.6), 0 0 60px rgba(241, 54, 169, 0.4);
+    
+    --neon-cyan-glow: 0 0 15px rgba(0, 243, 255, 0.4), 0 0 40px rgba(0, 243, 255, 0.2);
+    --neon-cyan-intense: 0 0 20px rgba(0, 243, 255, 0.6), 0 0 60px rgba(0, 243, 255, 0.4);
+    
+    /* Transiciones */
+    --ease: cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-in-out: cubic-bezier(0.42, 0, 0.58, 1);
+    --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* ==========================================================================
+   2. RESET Y NORMALIZACIÓN TOTAL
+   ========================================================================== */
+* {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    outline: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+html { 
+    scroll-behavior: smooth; 
+    font-size: 16px; 
+    -webkit-text-size-adjust: 100%;
+}
+
+body { 
+    background-color: var(--dark); 
+    /* El degradado imita las luces neón de tu primera imagen */
+    background-image: 
+        radial-gradient(circle at 85% 15%, rgba(241, 54, 169, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 15% 85%, rgba(0, 243, 255, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(176, 38, 255, 0.05) 0%, transparent 60%);
+    background-attachment: fixed; /* Mantiene las luces quietas al bajar */
+    color: var(--light); 
+    overflow-x: hidden;
+    line-height: 1.6;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+}
+/* Custom Scrollbar (Para navegadores Webkit) */
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: var(--dark);
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--primary), var(--tertiary));
+    border-radius: 5px;
+    border: 2px solid var(--dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--secondary), var(--primary));
+}
+
+/* ==========================================================================
+   3. TIPOGRAFÍA Y CONTENEDORES
+   ========================================================================== */
+.container { 
+    max-width: 1200px; 
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+    width: 100%;
+}
+
+h1 {
+    font-weight: 800; 
+    letter-spacing: -1px; 
+    line-height: 1.1; 
+    color: var(--light);
+}
+
+h2 {
+    font-weight: 800; 
+    letter-spacing: -1px; 
+    line-height: 1.2; 
+    color: var(--light);
+}
+
+h3 {
+    font-weight: 700; 
+    letter-spacing: -0.5px; 
+    line-height: 1.3; 
+    color: var(--light);
+}
+
+h4, h5, h6 { 
+    font-weight: 700; 
+    color: var(--light);
+}
+
+p { 
+    color: var(--text-gray); 
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    border-style: none;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==========================================================================
+   4. SISTEMA DE BOTONES NEÓN
+   ========================================================================== */
+.btn-primary { 
+    background: linear-gradient(135deg, var(--primary), var(--tertiary)); 
+    color: var(--light); 
+    padding-top: 18px;
+    padding-bottom: 18px;
+    padding-left: 36px;
+    padding-right: 36px;
+    font-size: 1.1rem; 
+    box-shadow: var(--neon-pink-glow);
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: all 0.4s var(--ease);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-primary:hover { 
+    transform: translateY(-5px) scale(1.02); 
+    -webkit-transform: translateY(-5px) scale(1.02);
+    -ms-transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--neon-pink-intense); 
+}
+
+.btn-primary-sm { 
+    background: var(--primary); 
+    color: var(--light); 
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 24px;
+    padding-right: 24px;
+    font-size: 0.9rem; 
+    box-shadow: 0 0 10px rgba(241, 54, 169, 0.4);
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: all 0.4s var(--ease);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-primary-sm:hover {
+    background: var(--secondary);
+    box-shadow: var(--neon-cyan-glow);
+    color: var(--dark);
+}
+
+.btn-secondary { 
+    background: var(--glass-bg); 
+    color: var(--secondary); 
+    padding-top: 18px;
+    padding-bottom: 18px;
+    padding-left: 36px;
+    padding-right: 36px;
+    border: 1px solid var(--secondary); 
+    font-size: 1.1rem; 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: all 0.4s var(--ease);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-secondary:hover { 
+    background: var(--secondary); 
+    color: var(--dark); 
+    box-shadow: var(--neon-cyan-glow);
+}
+
+/* ==========================================================================
+   5. NAVEGACIÓN PRINCIPAL (NAVBAR)
+   ========================================================================== */
+.navbar {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    z-index: 1000;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-left: 0;
+    padding-right: 0;
+    transition: all 0.4s var(--ease);
+    -webkit-transition: all 0.4s var(--ease);
+}
+
+.navbar.scrolled {
+    background: rgba(5, 5, 10, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.navbar-container { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.logo { 
+    font-size: 1.8rem; 
+    font-weight: 900; 
+    text-decoration: none; 
+    letter-spacing: -1.5px; 
+    color: var(--light);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    transition: 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.logo-pink { 
+    color: var(--primary); 
+    text-shadow: var(--neon-pink-glow);
+}
+
+.nav-links { 
+    display: flex; 
+    gap: 40px; 
+    align-items: center; 
+    list-style: none;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none; 
+    color: var(--light); 
+    font-weight: 600;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--secondary);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px var(--secondary);
+}
+
+.nav-links a:hover { 
+    color: var(--secondary); 
+    opacity: 1;
+    text-shadow: 0 0 8px var(--secondary);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.mobile-menu-btn { 
+    display: none; 
+    background: transparent; 
+    border: none; 
+    font-size: 1.5rem; 
+    color: var(--secondary); 
+    cursor: pointer; 
+    transition: 0.3s;
+}
+
+/* ==========================================================================
+   6. SECCIÓN HERO (ESTÁTICA + BRILLO NEÓN LATERAL)
+   ========================================================================== */
+.hero { 
+    padding: 180px 0 100px 0;
+    background: transparent !important; /* Ahora es transparente */
+    position: relative;
+    overflow: visible !important; 
+}
+
+/* Video de fondo y overlays */
+.hero-bg-video {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: -1;
+}
+
+.hero-container { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 60px; 
+    align-items: center; 
+    position: relative;
+    z-index: 5;
+    overflow: visible !important;
+}
+
+/* Estilos de Texto */
+.neon-badge {
+    background: rgba(241, 54, 169, 0.1); 
+    color: #f136a9;
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-size: 0.85rem; 
+    font-weight: 800; 
+    display: inline-block; 
+    margin-bottom: 24px;
+    border: 1px solid rgba(241, 54, 169, 0.3);
+}
+
+.hero h1 { 
+    font-size: 4.8rem; 
+    margin-bottom: 25px; 
+    line-height: 1.1;
+    color: #fff;
+}
+
+.highlight-gradient {
+    background: linear-gradient(135deg, #00f3ff 0%, #f136a9 100%);
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p { 
+    font-size: 1.2rem; 
+    margin-bottom: 40px; 
+    max-width: 500px; 
+    color: rgba(255,255,255,0.8);
+}
+
+.hero-btns { display: flex; gap: 20px; }
+
+/* --- VISUAL DE LA CARCASA (DERECHA) --- */
+.hero-interactive {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible !important; 
+}
+
+.phone-showcase {
+    position: relative;
+    width: 320px; /* Tamaño real de la imagen */
+    z-index: 10;
+    /* Sin rotaciones, vista plana */
+    transform: none !important; 
+    overflow: visible !important;
+}
+
+.phone-showcase img#main-hero-img { 
+    width: 100%; 
+    height: auto; 
+    border-radius: 40px;
+    position: relative;
+    z-index: 10;
+    
+    /* 🔥 BRILLO NEÓN EN LOS LADOS 🔥 */
+    /* Crea un resplandor rosa y azul que hace que la imagen "explote" visualmente */
+    box-shadow: 
+        -15px 0 30px rgba(241, 54, 169, 0.6),  /* Brillo izquierdo rosa */
+        15px 0 30px rgba(0, 243, 255, 0.6),    /* Brillo derecho cyan */
+        0 20px 50px rgba(0,0,0,0.8);          /* Sombra profunda abajo */
+}
+
+/* --- ETIQUETA "TU NOMBRE AQUÍ" --- */
+.floating-tooltip {
+    position: absolute;
+    /* Ajusta este valor para que quede donde quieras sobre la imagen */
+    right: -30px; 
+    top: 40%;
+    z-index: 100;
+    background: #000 !important;
+    color: #fff !important;
+    padding: 10px 22px;
+    border-radius: 50px;
+    border: 2px solid #f136a9; /* Borde neón rosa */
+    font-weight: 700;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 0 20px rgba(241, 54, 169, 0.8);
+    pointer-events: none;
+}
+
+/* UI DE COLORES (Flotante a la izquierda) */
+.ui-colors {
+    position: absolute;
+    left: -100px;
+    top: 15%;
+    z-index: 20;
+    background: rgba(15, 15, 15, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Mini Galería inferior */
+.hero-mini-gallery {
+    position: absolute;
+    bottom: -80px;
+    width: 100%;
+    z-index: 20;
+    text-align: center;
+}
+
+.gallery-track {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.gallery-thumb {
+    width: 50px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.gallery-thumb.active {
+    border-color: #f136a9;
+    transform: translateY(-5px);
+}
+
+/* ==========================================================================
+   7. SECCIÓN DE VENTAJAS (GRID DE ICONOS)
+   ========================================================================== */
+.advantages { 
+    padding-top: 80px;
+    padding-bottom: 80px;
+    position: relative;
+    z-index: 5;
+}
+
+.advantages-grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 40px; 
+    text-align: center; 
+}
+
+.advantage-item { 
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 24px; 
+    transition: 0.4s var(--ease); 
+    -webkit-transition: 0.4s var(--ease);
+}
+
+.advantage-item:hover {
+    transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
+    border-color: rgba(0, 243, 255, 0.3);
+    box-shadow: var(--neon-cyan-glow);
+}
+
+.advantage-item i { 
+    font-size: 3rem; 
+    color: var(--secondary); 
+    margin-bottom: 20px; 
+    display: inline-block; 
+}
+
+.advantage-item h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+/* ==========================================================================
+   8. CARRUSEL 3D (PRODUCTOS PRINCIPALES)
+   ========================================================================== */
+.products { 
+    padding-top: 120px;
+    padding-bottom: 120px;
+    position: relative;
+}
+
+.section-header { 
+    text-align: center; 
+    margin-bottom: 60px; 
+}
+
+.section-header h2 {
+    font-size: 3rem;
+}
+
+.carousel-scene {
+    width: 100%;
+    height: 600px;
+    perspective: 1200px;
+    -webkit-perspective: 1200px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.carousel-3d {
+    width: 280px; 
+    height: 440px; 
+    position: relative;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.carousel-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
+    -webkit-box-reflect: below 20px linear-gradient(transparent, transparent, rgba(0,0,0,0.4));
+    transition: 0.4s var(--ease);
+    -webkit-transition: 0.4s var(--ease);
+}
+
+.carousel-item:hover {
+    border-color: rgba(241, 54, 169, 0.4);
+    box-shadow: var(--neon-pink-glow);
+}
+
+/* Posicionamiento del cilindro 3D */
+.carousel-item:nth-child(1) { transform: rotateY(0deg) translateZ(350px); -webkit-transform: rotateY(0deg) translateZ(350px); }
+.carousel-item:nth-child(2) { transform: rotateY(60deg) translateZ(350px); -webkit-transform: rotateY(60deg) translateZ(350px); }
+.carousel-item:nth-child(3) { transform: rotateY(120deg) translateZ(350px); -webkit-transform: rotateY(120deg) translateZ(350px); }
+.carousel-item:nth-child(4) { transform: rotateY(180deg) translateZ(350px); -webkit-transform: rotateY(180deg) translateZ(350px); }
+.carousel-item:nth-child(5) { transform: rotateY(240deg) translateZ(350px); -webkit-transform: rotateY(240deg) translateZ(350px); }
+.carousel-item:nth-child(6) { transform: rotateY(300deg) translateZ(350px); -webkit-transform: rotateY(300deg) translateZ(350px); }
+
+.product-img-container {
+    height: 200px; 
+    border-radius: 20px; 
+    overflow: hidden; 
+    margin-bottom: 15px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: rgba(0,0,0,0.4); 
+    transition: 0.5s var(--ease);
+    -webkit-transition: 0.5s var(--ease);
+}
+
+.carousel-item:hover .product-img-container img {
+    animation: floatItem 3s ease-in-out infinite;
+    -webkit-animation: floatItem 3s ease-in-out infinite;
+    filter: drop-shadow(0 25px 35px rgba(0,0,0,0.8));
+    -webkit-filter: drop-shadow(0 25px 35px rgba(0,0,0,0.8));
+}
+
+.product-img-container img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: contain; 
+    transition: all 0.5s var(--ease);
+    -webkit-transition: all 0.5s var(--ease);
+}
+
+.price-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0,0,0,0.6);
+    color: var(--secondary);
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 14px;
+    padding-right: 14px;
+    border-radius: 20px;
+    border: 1px solid var(--secondary);
+    font-weight: 800;
+    z-index: 2;
+}
+
+/* ==========================================================================
+   9. MARQUEE (CINTA DESLIZANTE NEÓN)
+   ========================================================================== */
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(90deg, var(--primary), var(--tertiary));
+    color: var(--light);
+    padding-top: 6px;
+    padding-bottom: 6px;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 5px 20px rgba(241, 54, 169, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+}
+
+.marquee-content {
+    display: flex;
+    white-space: nowrap;
+    width: fit-content;
+    animation: marqueeScroll 20s linear infinite;
+    -webkit-animation: marqueeScroll 20s linear infinite;
+}
+
+.marquee-content span {
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    padding-right: 30px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================================================
+   10. OFERTAS FLASH (ESTILO GAMER 3D)
+   ========================================================================== */
+.flash-sale {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background: transparent !important; 
+    position: relative;
+    overflow: hidden;
+}
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    perspective: 1000px; 
+    -webkit-perspective: 1000px;
+    margin-bottom: 40px;
+}
+
+.time-block {
+    background: rgba(20, 20, 20, 0.8);
+    border: 1px solid rgba(241, 54, 169, 0.5);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 12px;
+    min-width: 90px;
+    box-shadow: 0 0 20px rgba(241, 54, 169, 0.2);
+    transform: rotateX(10deg); 
+    -webkit-transform: rotateX(10deg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+.time-block span {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--light);
+    display: block;
+}
+
+.time-block small {
+    color: var(--primary);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+}
+
+.sale-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
+}
+
+.sale-card {
+    background: linear-gradient(145deg, rgba(30, 30, 30, 0.9), rgba(10, 10, 10, 0.9));
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 25px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    -webkit-transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+
+.sale-card:hover {
+    transform: translateY(-10px) rotateX(5deg) rotateY(-5deg);
+    -webkit-transform: translateY(-10px) rotateX(5deg) rotateY(-5deg);
+    border-color: var(--secondary);
+    box-shadow: 0 20px 40px rgba(0, 243, 255, 0.15);
+}
+
+.sale-img {
+    width: 130px;
+    height: 130px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+}
+
+.sale-card:hover .sale-img {
+    transform: translateZ(30px) scale(1.1);
+    -webkit-transform: translateZ(30px) scale(1.1);
+}
+
+.sale-img img {
+    width: 85%;
+    height: 85%;
+    object-fit: contain;
+}
+
+.sale-info {
+    flex-grow: 1;
+}
+
+.new-price {
+    font-size: 1.8rem;
+    color: var(--secondary);
+    font-weight: 800;
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+    display: block;
+    margin-top: 5px;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: var(--text-gray);
+    font-size: 0.9rem;
+}
+
+.stock-bar {
+    width: 100%;
+    height: 6px;
+    background: #222;
+    border-radius: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.stock-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    box-shadow: 0 0 10px var(--primary);
+    border-radius: 10px;
+    width: 85%; /* Se controla dinámicamente con inline CSS usualmente */
+}
+
+/* ==========================================================================
+   11. GALERÍA DE VIDEOS (TIKTOK / LIVE)
+   ========================================================================== */
+.video-section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background: transparent !important;
+}
+.video-grid-pro {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.video-card-loop {
+    position: relative;
+    border-radius: 25px;
+    overflow: hidden;
+    background: #000;
+    aspect-ratio: 9 / 16;
+    border: 1px solid var(--glass-border);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -webkit-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+.video-card-loop:hover {
+    transform: translateY(-15px) scale(1.03);
+    -webkit-transform: translateY(-15px) scale(1.03);
+    border-color: var(--primary); 
+    box-shadow: 0 0 30px rgba(241, 54, 169, 0.6), 0 0 60px rgba(0, 243, 255, 0.2);
+    z-index: 2;
+}
+
+.video-card-loop video, .video-card-loop img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.9) contrast(1.1);
+    -webkit-filter: brightness(0.9) contrast(1.1);
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+}
+
+.video-card-loop:hover video, .video-card-loop:hover img {
+    filter: brightness(1.2) contrast(1.2);
+    -webkit-filter: brightness(1.2) contrast(1.2);
+}
+
+.video-card-loop::after {
+    content: "LIVE VIEW";
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(241, 54, 169, 0.8);
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 50px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+/* ==========================================================================
+   12. FOOTER (PIE DE PÁGINA)
+   ========================================================================== */
+.footer { 
+    padding-top: 80px;
+    padding-bottom: 40px;
+    background: rgba(0, 0, 0, 0.6); /* Un negro sutil para cerrar la web */
+    backdrop-filter: blur(10px);
+    color: var(--text-gray); 
+    text-align: center; 
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+.footer-logo { 
+    color: var(--light);
+    font-size: 2.5rem; 
+    font-weight: 800; 
+    margin-bottom: 20px; 
+    letter-spacing: -2px; 
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    display: inline-block;
+}
+
+.footer-text {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+
+.social-links { 
+    display: flex; 
+    justify-content: center; 
+    gap: 20px; 
+    font-size: 1.8rem; 
+    margin-bottom: 30px; 
+}
+
+.social-links a { 
+    color: var(--text-gray); 
+    text-decoration: none; 
+    transition: 0.3s; 
+    -webkit-transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+}
+
+.social-links a:hover { 
+    color: var(--secondary); 
+    background: rgba(0, 243, 255, 0.1);
+    transform: scale(1.1); 
+    -webkit-transform: scale(1.1);
+    text-shadow: var(--neon-cyan-glow);
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
+}
+
+.copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   13. COMPONENTES FLOTANTES (WHATSAPP & CURSOR)
+   ========================================================================== */
+.wsp-float {
+    position: fixed; 
+    bottom: 30px; 
+    right: 30px;
+    background-color: #25d366; 
+    color: white;
+    width: 65px; 
+    height: 65px; 
+    border-radius: 50%;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    font-size: 35px; 
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.5), 0 0 40px rgba(37, 211, 102, 0.3);
+    z-index: 2000; 
+    transition: 0.3s var(--ease);
+    -webkit-transition: 0.3s var(--ease);
+    text-decoration: none;
+}
+
+.wsp-float:hover { 
+    transform: scale(1.15) rotate(-10deg); 
+    -webkit-transform: scale(1.15) rotate(-10deg);
+    background-color: #1ebe57;
+}
+
+/* Cursor Personalizado (Se activa vía JS) */
+.cursor-dot, .cursor-outline {
+    pointer-events: none;
+    position: fixed;
+    top: 0; 
+    left: 0;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+}
+
+.cursor-dot {
+    width: 8px; 
+    height: 8px;
+    background-color: var(--primary);
+    box-shadow: 0 0 10px var(--primary);
+}
+
+.cursor-outline {
+    width: 40px; 
+    height: 40px;
+    border: 2px solid var(--secondary);
+    transition: transform 0.15s ease-out;
+    -webkit-transition: transform 0.15s ease-out;
+}
+
+/* ==========================================================================
+   14. SISTEMA DE ANIMACIONES (KEYFRAMES EXPLICITOS)
+   ========================================================================== */
+@keyframes glitch {
+    0% { filter: drop-shadow(2px 2px var(--primary)); }
+    25% { filter: drop-shadow(-2px 2px var(--secondary)); }
+    50% { filter: drop-shadow(2px -2px var(--primary)); }
+    75% { filter: drop-shadow(-2px -2px var(--secondary)); }
+    100% { filter: drop-shadow(2px 2px var(--primary)); }
+}
+
+@-webkit-keyframes glitch {
+    0% { -webkit-filter: drop-shadow(2px 2px var(--primary)); }
+    25% { -webkit-filter: drop-shadow(-2px 2px var(--secondary)); }
+    50% { -webkit-filter: drop-shadow(2px -2px var(--primary)); }
+    75% { -webkit-filter: drop-shadow(-2px -2px var(--secondary)); }
+    100% { -webkit-filter: drop-shadow(2px 2px var(--primary)); }
+}
+
+@keyframes floatItem {
+    0% { transform: translateY(0px) scale(1); }
+    25% { transform: translateY(-6px) scale(1.02); }
+    50% { transform: translateY(-12px) scale(1.05); }
+    75% { transform: translateY(-6px) scale(1.02); }
+    100% { transform: translateY(0px) scale(1); }
+}
+
+@-webkit-keyframes floatItem {
+    0% { -webkit-transform: translateY(0px) scale(1); }
+    50% { -webkit-transform: translateY(-12px) scale(1.05); }
+    100% { -webkit-transform: translateY(0px) scale(1); }
+}
+
+@keyframes marqueeScroll {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-25%); }
+    100% { transform: translateX(-50%); } 
+}
+
+@-webkit-keyframes marqueeScroll {
+    0% { -webkit-transform: translateX(0); }
+    100% { -webkit-transform: translateX(-50%); } 
+}
+
+/* Efecto de Revelado (Scroll Reveal) */
+.sale-card, .video-card-loop, .advantage-item {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+    -webkit-transform: translateY(50px) scale(0.9);
+    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    -webkit-transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.sale-card.visible, .video-card-loop.visible, .advantage-item.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    -webkit-transform: translateY(0) scale(1);
+}
+
+/* ==========================================================================
+   15. DISEÑO RESPONSIVO (MEDIA QUERIES)
+   ========================================================================== */
+
+/* TABLETS GRANDES (HASTA 1024PX) */
+@media screen and (max-width: 1024px) {
+    .hero-container { 
+        grid-template-columns: 1fr; 
+        text-align: center; 
+        gap: 60px; 
+    }
+    .hero-text { 
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+    }
+    .hero h1 { 
+        font-size: 3.8rem; 
+    }
+    .hero-visual {
+        margin-top: 40px;
+    }
+    .advantages-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* TABLETS Y MÓVILES (HASTA 768PX) */
+@media screen and (max-width: 768px) {
+    .navbar { 
+        padding-top: 15px;
+        padding-bottom: 15px;
+        background: rgba(5, 5, 10, 0.85); 
+        backdrop-filter: blur(15px); 
+        -webkit-backdrop-filter: blur(15px);
+    }
+    .nav-links { 
+        display: none; 
+    }
+    .mobile-menu-btn { 
+        display: block; 
+    }
+    .nav-links.nav-active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(5, 5, 10, 0.95);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        padding: 20px;
+        gap: 15px;
+        border-bottom: 1px solid var(--glass-border);
+    }
+    
+    .hero { 
+        padding-top: 140px; 
+        padding-bottom: 80px;
+    }
+    .hero h1 { 
+        font-size: 2.8rem; 
+    }
+    .hero p {
+        font-size: 1rem;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .phone-showcase { 
+        width: 280px; 
+        height: auto; 
+    }
+    
+    .advantages-grid, .sale-grid { 
+        grid-template-columns: 1fr; 
+        gap: 30px; 
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .sale-card {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    
+    .sale-img {
+        width: 160px;
+        height: 160px;
+    }
+    
+    /* Ajustes móviles para el Carrusel 3D */
+    .carousel-scene { 
+        height: 480px; 
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .carousel-3d { 
+        width: 230px; 
+        height: 380px; 
+    }
+    .carousel-item {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .carousel-item .product-img-container { 
+        height: 160px; 
+    }
+    
+    /* Reducción de profundidad Z en celulares para evitar desbordes */
+    .carousel-item:nth-child(1) { transform: rotateY(0deg) translateZ(240px); -webkit-transform: rotateY(0deg) translateZ(240px); }
+    .carousel-item:nth-child(2) { transform: rotateY(60deg) translateZ(240px); -webkit-transform: rotateY(60deg) translateZ(240px); }
+    .carousel-item:nth-child(3) { transform: rotateY(120deg) translateZ(240px); -webkit-transform: rotateY(120deg) translateZ(240px); }
+    .carousel-item:nth-child(4) { transform: rotateY(180deg) translateZ(240px); -webkit-transform: rotateY(180deg) translateZ(240px); }
+    .carousel-item:nth-child(5) { transform: rotateY(240deg) translateZ(240px); -webkit-transform: rotateY(240deg) translateZ(240px); }
+    .carousel-item:nth-child(6) { transform: rotateY(300deg) translateZ(240px); -webkit-transform: rotateY(300deg) translateZ(240px); }
+    
+    .marquee-container { 
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+    .marquee-content span { 
+        font-size: 0.75rem; 
+        padding-right: 15px;
+    }
+    
+    .video-grid-pro {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    
+    .footer {
+        padding-top: 60px;
+    }
+    
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .section-header h2 {
+        font-size: 2.2rem;
+    }
+    .floating-tooltip {
+        right: 10px;
+        top: 5%;
+        font-size: 0.8rem;
+        padding: 8px 15px;
+    }
+    .ui-colors {
+        left: 10px;
+        top: 5%;
+        width: 160px;
+    }
+    .hero-mini-gallery {
+        position: relative;
+        bottom: auto;
+        margin-top: 30px;
+        text-align: center;
+    }
+    .gallery-track {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .btn-buy {
+        padding: 14px 28px;
+        font-size: 1rem;
+    }
+}
+
+/* CELULARES PEQUEÑOS (HASTA 480PX) */
+@media screen and (max-width: 480px) {
+    .hero h1 { 
+        font-size: 2.2rem; 
+    }
+    .hero-btns {
+        flex-direction: column;
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .phone-showcase { 
+        width: 240px; 
+        height: auto; 
+    }
+    .wsp-float {
+        width: 55px;
+        height: 55px;
+        font-size: 30px;
+        bottom: 20px;
+        right: 20px;
+    }
+    .chat-float {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        bottom: 100px;
+        right: 25px;
+    }
+    .floating-tooltip {
+        right: 5px;
+        top: 0;
+        font-size: 0.7rem;
+        padding: 6px 12px;
+    }
+    .ui-colors {
+        left: 5px;
+        top: 0;
+        width: 140px;
+        padding: 10px;
+    }
+    .hero-mini-gallery h4 {
+        font-size: 0.9rem;
+    }
+    .gallery-thumb {
+        width: 40px;
+        height: 60px;
+    }
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+    .sale-grid {
+        grid-template-columns: 1fr;
+    }
+    .carousel-scene {
+        height: 400px;
+    }
+    .carousel-3d {
+        width: 200px;
+        height: 340px;
+    }
+    .carousel-item .product-img-container {
+        height: 130px;
+    }
+    .carousel-item:nth-child(1) { transform: rotateY(0deg) translateZ(180px); -webkit-transform: rotateY(0deg) translateZ(180px); }
+    .carousel-item:nth-child(2) { transform: rotateY(60deg) translateZ(180px); -webkit-transform: rotateY(60deg) translateZ(180px); }
+    .carousel-item:nth-child(3) { transform: rotateY(120deg) translateZ(180px); -webkit-transform: rotateY(120deg) translateZ(180px); }
+    .carousel-item:nth-child(4) { transform: rotateY(180deg) translateZ(180px); -webkit-transform: rotateY(180deg) translateZ(180px); }
+    .carousel-item:nth-child(5) { transform: rotateY(240deg) translateZ(180px); -webkit-transform: rotateY(240deg) translateZ(180px); }
+    .carousel-item:nth-child(6) { transform: rotateY(300deg) translateZ(180px); -webkit-transform: rotateY(300deg) translateZ(180px); }
+    .container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    .hero p {
+        font-size: 0.85rem;
+    }
+    .logo {
+        font-size: 1.4rem;
+}
+
+}
+
+
+
+/* =======================================================
+   HERO INTERACTIVO "BACANO" (ESTILO MOCKUP)
+   ======================================================= */
+
+/* Fondos y Luces */
+.hero {
+    position: relative;
+    padding: 160px 0 100px;
+    background: #05050a;
+    overflow: hidden;
+}
+
+.hero-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: 2; /* 🔥 ¡AQUÍ! Cambia ese 0 por un 2 para que las luces brillen */
+    opacity: 0.8; /* Súbele a 0.8 para que resalten más sobre el video negro */
+    animation: pulseGlow 8s infinite alternate;
+}
+
+.background-glow-1 {
+    width: 600px; height: 600px;
+    background: var(--primary);
+    top: -20%; right: -10%;
+}
+
+.background-glow-2 {
+    width: 500px; height: 500px;
+    background: var(--secondary);
+    bottom: -10%; left: -10%;
+}
+
+/* Textos */
+.highlight-gradient {
+    background: linear-gradient(90deg, var(--secondary), var(--primary), var(--tertiary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 5.5rem;
+    line-height: 1;
+}
+
+.pulse-btn {
+    box-shadow: 0 0 20px rgba(241, 54, 169, 0.6);
+    animation: pulseBtnAnim 2s infinite;
+}
+
+/* Contenedor Derecho (Visual) */
+.hero-interactive {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.phone-showcase {
+    width: 280px;
+    position: relative;
+    z-index: 5;
+    border-radius: 40px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 30px rgba(0, 243, 255, 0.3);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.phone-showcase img {
+    width: 100%;
+    border-radius: 40px;
+    transition: 0.4s ease;
+}
+
+/* Paneles Flotantes (Glassmorphism) */
+.floating-ui {
+    position: absolute;
+    background: rgba(20, 20, 30, 0.7);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 15px;
+    padding: 15px;
+    z-index: 10;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.ui-colors {
+    top: 10%;
+    left: -15%;
+    width: 200px;
+}
+
+.color-dots {
+    display: flex; gap: 8px; margin: 10px 0;
+}
+
+.dot {
+    width: 25px; height: 25px;
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+.ui-input-mockup {
+    background: rgba(255,255,255,0.1);
+    padding: 8px;
+    border-radius: 8px;
+    color: white;
+    font-size: 0.9rem;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.floating-tooltip {
+    position: absolute;
+    top: 45%;
+    right: -40%;
+    background: var(--dark);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 1px solid var(--primary);
+    box-shadow: var(--neon-pink-glow);
+    font-weight: bold;
+    font-size: 0.9rem;
+    z-index: 10;
+}
+
+/* Mini Galería Inferior */
+.hero-mini-gallery {
+    position: absolute;
+    bottom: -10%;
+    right: 0;
+    width: 100%;
+    z-index: 15;
+}
+
+.hero-mini-gallery h4 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.gallery-track {
+    display: flex;
+    gap: 15px;
+}
+
+.gallery-thumb {
+    width: 70px;
+    height: 100px;
+    object-fit: cover;  
+    border-radius: 12px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: 0.3s ease;
+    opacity: 0.6;
+}
+.gallery-thumb:hover, .gallery-thumb.active {
+    border-color: var(--secondary);
+    opacity: 1;
+    transform: translateY(-5px);
+    box-shadow: var(--neon-cyan-glow);
+}
+
+/* Animaciones Flotantes */
+.floating-anim-1 { animation: float 4s ease-in-out infinite; }
+.floating-anim-2 { animation: float 5s ease-in-out infinite reverse; }
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes pulseBtnAnim {
+    0% { transform: scale(1); box-shadow: 0 0 15px rgba(241, 54, 169, 0.4); }
+    50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(241, 54, 169, 0.8); }
+    100% { transform: scale(1); box-shadow: 0 0 15px rgba(241, 54, 169, 0.4); }
+}
+
+/* Responsivo para móviles */
+@media screen and (max-width: 1024px) {
+    .floating-tooltip { right: 0; top: 10%; }
+    .ui-colors { left: 0; top: 0; z-index: 20; }
+    .hero-mini-gallery { position: relative; bottom: 0; margin-top: 30px; text-align: center; }
+    .gallery-track { justify-content: center; }
+}
+
+
+
+
+
+/* =======================================================
+   FONDO DE VIDEO Y OVERLAY
+   ======================================================= */
+.hero-bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: 0; 
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(5, 5, 10, 0.7); 
+    z-index: 1; 
+}
+
+.hero-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: 2; /* Importante: las luces van en 2 para que se vean sobre el video */
+    opacity: 0.8;
+    animation: pulseGlow 8s infinite alternate;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 10; /* Para que tu texto no se quede detrás del video */
+}
+
+/* =======================================================
+   ARREGLO DE LA IMAGEN CUADRADA DEL CELULAR
+   ======================================================= */
+.phone-showcase {
+    width: 280px;
+    height: 560px; /* Le damos altura fija */
+    position: relative;
+    z-index: 5;
+    border-radius: 40px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 30px rgba(0, 243, 255, 0.3);
+    border: 1px solid rgba(255,255,255,0.1);
+    overflow: hidden; /* ESTE ES EL SECRETO PARA QUE LA IMAGEN NO SE SALGA */
+    background: #000;
+}
+
+.phone-showcase img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 40px;
+    transition: 0.4s ease;
+}
+
+
+
+
+/* ============================================================
+   LUCES NEÓN KATICASE - EXPLOSIÓN DE COLOR
+   ============================================================ */
+.products {
+    position: relative;
+    overflow: hidden;
+    /* Esto hace que el fondo sea negro profundo para que el neón resalte */
+    background: #030307 !important; 
+}
+
+/* Luz Rosa Gigante a la derecha */
+.products::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+    bottom: -15%;
+    right: -10%;
+    filter: blur(100px);
+    opacity: 0.7; /* Color bien fuerte */
+    z-index: 0;
+    pointer-events: none;
+    animation: floatingGlow 8s infinite alternate ease-in-out;
+}
+
+/* Luz Cian Gigante a la izquierda */
+.products::after {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--secondary) 0%, transparent 70%);
+    top: -15%;
+    left: -10%;
+    filter: blur(100px);
+    opacity: 0.5;
+    z-index: 0;
+    pointer-events: none;
+    animation: floatingGlow 10s infinite alternate-reverse ease-in-out;
+}
+
+/* Animación para que las luces se muevan solas */
+@keyframes floatingGlow {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(40px, 40px) scale(1.1); }
+}
+
+/* Subimos el contenido para que no lo tapen las luces */
+.products .container, .carousel-scene {
+    position: relative;
+    z-index: 5;
+}
+
+
+
+
+/* ============================================================
+   FUSIÓN NEÓN KATICASE (CON VIDEO RESPETADO)
+   ============================================================ */
+
+.products {
+    position: relative;
+    overflow: hidden;
+    /* QUITAMOS EL COLOR NEGRO SÓLIDO PARA QUE SE VEA EL VIDEO */
+    background: transparent !important; 
+}
+
+/* Las luces ahora irán DETRÁS del contenido pero ENCIMA del video para darle color */
+.products::before, .products::after {
+    content: '';
+    position: absolute;
+    width: 800px; 
+    height: 800px;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.4; /* Bajamos un poco la opacidad para que no tape el video */
+    z-index: -1;   /* Esto lo pone entre el video y los productos */
+    pointer-events: none;
+}
+
+/* Luz Fucsia (Fuerte para la derecha y abajo) */
+.products::before {
+    background: radial-gradient(circle, var(--primary) 0%, transparent 75%);
+    bottom: -20%;
+    right: -10%;
+    animation: pulseGlow 8s infinite alternate ease-in-out;
+}
+
+/* Luz Cyan (Fuerte para la izquierda y arriba) */
+.products::after {
+    background: radial-gradient(circle, var(--secondary) 0%, transparent 75%);
+    top: -20%;
+    left: -10%;
+    animation: pulseGlow 10s infinite alternate-reverse ease-in-out;
+}
+
+/* ESTO ES LO MÁS IMPORTANTE: Asegura que el video se quede al fondo de todo */
+.products video, 
+.products .hero-bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2; /* El video se queda en la capa más profunda */
+}
+
+/* Aseguramos que los productos brillen y estén al frente */
+.products .container, 
+.carousel-scene {
+    position: relative;
+    z-index: 5 !important;
+}
+
+@keyframes pulseGlow {
+    0% { transform: scale(1); opacity: 0.3; }
+    100% { transform: scale(1.2); opacity: 0.6; }
+}
+
+
+
+
+
+
+/* ============================================================
+   EFECTO "ULTRA-BACÁN" - CONEXIÓN 3D Y RESPLANDOR
+   ============================================================ */
+
+/* 1. Hacemos que la cinta flote con una sombra gigante */
+.marquee-container {
+    border-top: 2px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 40px rgba(241, 54, 169, 0.8); /* Brillo neón potente */
+    transform: translateY(10px); /* La bajamos un poquito para que pise la siguiente sección */
+    z-index: 100;
+    position: relative;
+}
+
+/* 2. El "Separador de Energía": Un degradado que une la cinta con los Best Sellers */
+.products::before {
+    content: '';
+    position: absolute;
+    top: -50px; /* Sube para tocar la cinta */
+    left: 0;
+    width: 100%;
+    height: 300px; /* Una sombra de color que baja largo */
+    background: linear-gradient(180deg, 
+        rgba(241, 54, 169, 0.3) 0%, 
+        rgba(0, 243, 255, 0.1) 50%, 
+        transparent 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* 3. Animación de "Escaneo" en la cinta para que brille más */
+.marquee-content span {
+    background: linear-gradient(90deg, #fff, var(--light), #fff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shineText 3s linear infinite;
+}
+
+@keyframes shineText {
+    to { background-position: 200% center; }
+}
+
+/* 4. Ajuste final para que los Best Sellers no tengan huecos */
+.products {
+    padding-top: 100px !important;
+    margin-top: -30px !important; /* Succión visual para eliminar el espacio */
+}
+
+
+
+
+
+/* ============================================================
+   FUSIÓN ÉPICA KATICASE - CONTRASTE & NEÓN POTENTE
+   ============================================================ */
+
+/* 1. OSCURECER EL FONDO DE LA SECCIÓN (Para que el video no distraiga) */
+.products {
+    position: relative;
+    overflow: hidden;
+    background: transparent !important; /* Mantenemos el video visible */
+}
+
+/* Capa negra súper opaca encima del video */
+.products::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85); /* ¡85% de oscuridad! El video será solo una sombra */
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* 2. POTENCIAR LAS LUCES NEÓN DE LOS COSTADOS (Mucho más fuertes) */
+.products::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    /* Dos cañones de luz: Fucsia a la derecha, Cian a la izquierda */
+    background: 
+        radial-gradient(circle at 100% 50%, rgba(241, 54, 169, 0.7) 0%, transparent 60%),
+        radial-gradient(circle at 0% 50%, rgba(0, 243, 255, 0.6) 0%, transparent 60%);
+    z-index: 1; /* Entre la capa oscura y los productos */
+    pointer-events: none;
+    filter: blur(80px); /* Desenfoque pro */
+    opacity: 0.9; /* ¡Casi opacidad total! Brillo súper fuerte */
+    animation: neonPulse 6s infinite alternate ease-in-out;
+}
+
+/* 3. RESALTAR LOS PRODUCTOS Y EL TÍTULO (Que no se oscurezcan) */
+.products .container, 
+.carousel-scene, 
+.section-header, 
+.carousel-controls {
+    position: relative;
+    z-index: 10 !important; /* Esto los pone al frente de todo el brillo */
+}
+
+/* Animación de pulso para que el neón tenga vida */
+@keyframes neonPulse {
+    0% { opacity: 0.7; transform: scale(1); }
+    100% { opacity: 1; transform: scale(1.05); }
+}
+
+/* Mejoramos el brillo de las tarjetas al hover */
+.carousel-item:hover {
+    border-color: #fff;
+    box-shadow: 0 0 30px rgba(241, 54, 169, 0.8), 0 0 60px rgba(0, 243, 255, 0.4);
+}
+
+/* ==========================================================================
+   14. ESTILOS PARA EL CHAT FLOTANTE
+   ========================================================================== */
+.chat-float {
+    position: fixed;
+    bottom: 110px; /* Arriba del WhatsApp */
+    right: 30px;
+    background-color: #f21d41; /* Color de Kati */
+    color: white;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    box-shadow: 0 0 20px rgba(242, 29, 65, 0.5), 0 0 40px rgba(242, 29, 65, 0.3);
+    z-index: 2000;
+    transition: 0.3s var(--ease);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.chat-float:hover {
+    transform: scale(1.15) rotate(10deg);
+    background-color: #d11835;
+}
+
+.chat-modal {
+    display: none;
+    position: fixed;
+    z-index: 3000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.chat-modal-content {
+    background: linear-gradient(135deg, rgba(15, 0, 10, 0.95), rgba(30, 0, 20, 0.95));
+    margin: 5% auto;
+    padding: 0;
+    border: 1px solid rgba(242, 29, 65, 0.4);
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 50px rgba(242, 29, 65, 0.5);
+}
+
+.chat-header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid rgba(242, 29, 65, 0.4);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px 20px 0 0;
+}
+
+.chat-header img {
+    margin-right: 15px;
+}
+
+.chat-header h3 {
+    flex: 1;
+    color: #f21d41;
+    font-size: 1.2rem;
+    text-shadow: 0 0 10px #f21d41;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+#chat-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-height: 400px;
+}
+
+.bubble {
+    max-width: 80%;
+    padding: 15px 20px;
+    border-radius: 20px;
+    font-size: 1rem;
+    line-height: 1.4;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation: bounceIn 0.5s ease;
+}
+
+.bubble-ai {
+    background: rgba(242, 29, 65, 0.2);
+    border: 1px solid rgba(242, 29, 65, 0.4);
+    align-self: flex-start;
+}
+
+.bubble-user {
+    background: rgba(0, 243, 255, 0.2);
+    border: 1px solid rgba(0, 243, 255, 0.4);
+    align-self: flex-end;
+}
+
+.input-area {
+    display: flex;
+    padding: 20px;
+    gap: 10px;
+    border-top: 1px solid rgba(242, 29, 65, 0.4);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0 0 20px 20px;
+}
+
+#user-input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid rgba(242, 29, 65, 0.4);
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1rem;
+}
+
+#user-input::placeholder {
+    color: #a0a0b8;
+}
+
+.icon-btn {
+    background: #f21d41;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.icon-btn:hover {
+    background: #d11835;
+    transform: scale(1.1);
+}
+
+.mic-active {
+    background: #00f3ff !important;
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.8) !important;
+}
+
+@keyframes bounceIn {
+    0% { opacity: 0; transform: scale(0.8) translateY(20px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* ==========================================================================
+   16. TOUCH DEVICE ADJUSTMENTS
+   ========================================================================== */
+@media (hover: none) {
+    .btn-primary:hover,
+    .btn-primary-sm:hover,
+    .btn-secondary:hover,
+    .wsp-float:hover,
+    .chat-float:hover,
+    .social-links a:hover {
+        transform: none !important;
+    }
+    .carousel-item:hover {
+        border-color: var(--glass-border);
+        box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
+    }
+    .sale-card:hover {
+        transform: none !important;
+    }
+}
+

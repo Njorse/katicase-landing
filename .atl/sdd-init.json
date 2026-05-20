@@ -1,0 +1,94 @@
+{
+  "status": "initialized",
+  "persistence_mode": "openspec",
+  "generated": "2026-05-20T12:53:00-05:00",
+  "project": {
+    "name": "kati-case-landing",
+    "path": "C:\\Users\\sourc\\OneDrive\\Escritorio\\landing page\\landing page",
+    "type": "static-landing-page"
+  },
+  "stack": {
+    "languages": ["HTML5", "CSS3", "ES6 JavaScript"],
+    "framework": null,
+    "build_tools": [],
+    "bundler": null,
+    "package_manager": null,
+    "dependencies": {
+      "cdn": [
+        "Font Awesome 6.0.0",
+        "Google Fonts (Plus Jakarta Sans)"
+      ]
+    },
+    "external_services": {
+      "chat_api": "http://127.0.0.1:8080/chat",
+      "whatsapp": "https://wa.me/51935030796"
+    }
+  },
+  "architecture": {
+    "pattern": "Single-page semantic sections",
+    "sections": ["hero", "advantages", "carousel-products", "flash-sale", "testimonials", "video-wall", "footer"],
+    "styling_approach": "CSS custom properties (neon theme), glassmorphism, CSS 3D transforms",
+    "js_patterns": "DOM manipulation, IntersectionObserver, fetch API, Web Speech API",
+    "interactive_features": [
+      "3D product carousel",
+      "Hero image gallery switcher",
+      "WhatsApp product redirection",
+      "AI voice chat modal (Web Speech API + fetch)",
+      "Scroll-triggered reveal animations",
+      "Countdown timer",
+      "Marquee ticker"
+    ]
+  },
+  "conventions": {
+    "css_naming": "kebab-case, BEM-lite",
+    "css_organization": "Section-commented with ASCII dividers (===...)",
+    "css_variables": "Defined in :root, neon palette",
+    "js_comments": "Spanish, section headers",
+    "font": "Plus Jakarta Sans, 16px base",
+    "color_palette": {
+      "primary": "#f136a9 (neon pink)",
+      "secondary": "#00f3ff (cyan)",
+      "tertiary": "#b026ff (purple)",
+      "dark": "#05050a",
+      "light": "#ffffff"
+    },
+    "responsive": "Mobile menu button present (placeholder implementation)"
+  },
+  "testing_capabilities": {
+    "strict_tdd": false,
+    "detected": "2026-05-20",
+    "runner": { "available": false, "command": null, "framework": null },
+    "layers": {
+      "unit": { "available": false, "tool": null },
+      "integration": { "available": false, "tool": null },
+      "e2e": { "available": false, "tool": null }
+    },
+    "coverage": { "available": false, "command": null },
+    "quality": {
+      "linter": { "available": false, "command": null },
+      "type_checker": { "available": false, "command": null },
+      "formatter": { "available": false, "command": null }
+    },
+    "explanation": "This is a vanilla HTML/CSS/JS static landing page with no build toolchain, no package manager, and no test framework. Testing infrastructure would need to be introduced from scratch."
+  },
+  "artifacts": {
+    "openspec_config": "openspec/config.yaml",
+    "skill_registry": ".atl/skill-registry.md",
+    "sdd_init_json": ".atl/sdd-init.json",
+    "openspec_dirs": [
+      "openspec/specs/",
+      "openspec/changes/",
+      "openspec/changes/archive/"
+    ]
+  },
+  "risks": [
+    "No version control (no Git repo) — changes cannot be tracked or reverted",
+    "No test infrastructure — all verification is manual/browser-based",
+    "Inline styles mixed with external CSS — potential specificity conflicts",
+    "Chat API dependency on localhost:8080 — fragile during development",
+    "WhatsApp number hardcoded in JS — not configurable",
+    "Web Speech API not supported in all browsers — chat mic feature degrades",
+    "No linter/formatter — code style inconsistencies may accumulate"
+  ],
+  "next_recommended": "Run `/sdd-explore` to define the first change, or `/sdd-propose` with a specific change name to start the SDD workflow."
+}

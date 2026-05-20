@@ -1,0 +1,51 @@
+schema: spec-driven
+
+context: |
+  Tech stack: Vanilla HTML5 + CSS3 + ES6 JavaScript — static landing page, no build tools
+  Architecture: Single-page with semantic sections (hero, advantages, carousel, testimonials, video wall, footer)
+  Styling: Custom CSS with CSS custom properties (neon/cyberpunk theme), glassmorphism, CSS 3D carousel
+  Dependencies: Font Awesome 6 CDN, Google Fonts (Plus Jakarta Sans), external chat API (127.0.0.1:8080)
+  No frameworks, no package.json, no bundler, no transpiler
+  No Git repository, no CI/CD
+
+rules:
+  proposal:
+    - Include rollback plan for risky changes
+  specs:
+    - Use Given/When/Then for scenarios
+    - Use RFC 2119 keywords (MUST, SHALL, SHOULD, MAY)
+  design:
+    - Include sequence diagrams for complex flows
+    - Document architecture decisions with rationale
+  tasks:
+    - Group by phase, use hierarchical numbering
+    - Keep tasks completable in one session
+  apply:
+    - Follow existing code patterns (kebab-case CSS, BEM-lite naming, section-commented CSS, Spanish JS comments)
+    tdd: false
+    test_command: ""
+  verify:
+    test_command: ""
+    build_command: ""
+    coverage_threshold: 0
+  archive:
+    - Warn before merging destructive deltas
+
+testing:
+  strict_tdd: false
+  detected: "2026-05-20"
+  runner:
+    available: false
+    command: —
+    framework: —
+  layers:
+    unit: {available: false, tool: "—"}
+    integration: {available: false, tool: "—"}
+    e2e: {available: false, tool: "—"}
+  coverage:
+    available: false
+    command: "—"
+  quality:
+    linter: {available: false, command: "—"}
+    type_checker: {available: false, command: "—"}
+    formatter: {available: false, command: "—"}
